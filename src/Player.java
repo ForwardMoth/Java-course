@@ -10,15 +10,15 @@ public class Player {
 //        this.ships = ;
     }
 
-    private Ship[] createField() {
-        Ship[] newShips = new Ship[COUNT_SHIPS];
-
-        for(int i=0;i<COUNT_SHIPS;i++) {
-
-        }
-
-
-        return
-    }
+//    private Ship[] createField() {
+//        Ship[] newShips = new Ship[COUNT_SHIPS];
+//
+//        for(int i=0;i<COUNT_SHIPS;i++) {
+//
+//        }
+//
+//
+//        return
+//    }
 
 }
