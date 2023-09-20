@@ -15,7 +15,24 @@ public class Game {
         placementShips();
         chooseGameTurn();
         startPlaying();
+        printShips();
+        declareWinner();
         System.out.println("Ending the game...");
+    }
+
+    private static void declareWinner() {
+        if (!player1.isAlive())
+            System.out.println("Player " + player2.getName() + " is winner.");
+        else
+            System.out.println("Player " + player1.getName() + " is winner.");
+    }
+
+    private static void printShips(){
+        System.out.println("Placement ships of each player: ");
+        System.out.println("Player" + player1.getName() + "'s ships");
+        player1.field.printField(false);
+        System.out.println("Player" + player2.getName() + "'s ships");
+        player2.field.printField(false);
     }
 
     private static void placementShips(){
@@ -38,9 +55,20 @@ public class Game {
     }
 
     private static void startPlaying() {
-//        while(player1.isAlive() & player2.isAlive()) {
-//
-//        }
+        while(player1.isAlive() & player2.isAlive()) {
+            Player currentPlayer = getCurrentPlayer();
+            System.out.println(currentPlayer.getName() + ", your turn:");
+            Player anotherPlayer = getAnotherPlayer();
+            anotherPlayer.showShotField();
+            changeGameTurn(currentPlayer.makeShot(scanner), anotherPlayer);
+        }
+    }
+
+    private static void changeGameTurn(String coordinates, Player anotherPlayer){
+        if (!anotherPlayer.isHit(coordinates)){
+            gameTurn = (gameTurn + 1) % 2;
+            System.out.println("You aren't hit!");
+        }
     }
 
     private static void chooseGameTurn() {
@@ -51,6 +79,10 @@ public class Game {
 
     private static Player getCurrentPlayer() {
         return (gameTurn == 0) ? player1 : player2;
+    }
+
+    private static Player getAnotherPlayer() {
+        return (gameTurn == 0) ? player2 : player1;
     }
 
     private static void placementTestShips() {

@@ -6,8 +6,24 @@ public class Field {
 
     private final static String LETTERS = "ABCDEFGHIJ";
 
+    private final static Ship tecniqueShip = new Ship(1, -1);
+
     Field() {
         this.field = createField();
+    }
+
+    public int insertHit(String coordinates) {
+        tecniqueShip.setCoordinates(coordinates);
+        int columnIndex = tecniqueShip.getColumnIndex() - 1;
+        int lineIndex = getIntegerIndex(tecniqueShip.getLineIndex());
+
+        Cell currentCell = field.get(lineIndex).get(columnIndex);
+        int cellType = currentCell.getType();
+        if (cellType <= 0)
+            currentCell.setType(-1);
+        else
+            currentCell.setType(-2);
+        return cellType;
     }
 
     public boolean placeShip(Ship ship) {
@@ -17,12 +33,12 @@ public class Field {
         int columnIndex = ship.getColumnIndex() - 1;
         int lineIndex = getIntegerIndex(ship.getLineIndex());
 
-        if (isLineInsert(ship))
+        if (ship.isLine())
             for(int i=columnIndex; i<columnIndex+ship.getSize();i++)
-                field.get(lineIndex).get(i).setType("*");
+                field.get(lineIndex).get(i).setType(ship.getId());
         else
             for(int i=lineIndex; i < lineIndex+ship.getSize();i++)
-                field.get(i).get(columnIndex).setType("*");
+                field.get(i).get(columnIndex).setType(ship.getId());
         return false;
     }
 
@@ -30,16 +46,11 @@ public class Field {
         return LETTERS.indexOf(letter);
     }
 
-    private boolean isLineInsert(Ship ship){
-        String coordinates = ship.getCoordinates();
-        return coordinates.charAt(0) == coordinates.charAt(coordinates.length() - 2);
-    }
-
-    public void printField() {
+    public void printField(boolean hideShips) {
         System.out.println("Game field");
         for(int i=0; i<FIELD_SIZE; i++) {
             for(int j=0; j<FIELD_SIZE; j++) {
-                System.out.print(field.get(i).get(j).getType() + " ");
+                System.out.print(field.get(i).get(j).getType(hideShips) + " ");
             }
             System.out.print(LETTERS.charAt(i));
             System.out.println();

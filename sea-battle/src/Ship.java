@@ -1,20 +1,33 @@
+import java.util.ArrayList;
+
 public class Ship {
     private int size;
+    private int id;
     private String coordinates;
-    Ship(int size) {
+
+    Ship(int size, int id) {
         this.size = size;
+        this.id = id;
+    }
+
+    public int getId(){
+        return id;
     }
 
     public int getSize(){
         return size;
     }
 
+    public boolean updateSize() {
+        return --size == 0;
+    }
+
     public void setCoordinates(String coordinates){
         this.coordinates = coordinates;
     }
 
-    public String getCoordinates() {
-        return coordinates;
+    public boolean isLine(){
+        return coordinates.charAt(0) == coordinates.charAt(coordinates.length() - 2);
     }
 
     public int getColumnIndex() {
@@ -32,8 +45,4 @@ public class Ship {
         else
             return !((coordinates.length() == 2) | (coordinates.length() == 3));
     }
-
-//    public boolean linePlacing(){
-//        return coordinates[0] == coordinates[1];
-//    }
 }
