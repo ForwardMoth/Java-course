@@ -1,7 +1,7 @@
 import java.util.Random;
 
 public abstract class TestCollections {
-    protected final int N = 8000000;
+    protected final int N = 800000;
     protected static Random rand = new Random();
     protected double addElementsDuration;
     protected double findElementDuration;
