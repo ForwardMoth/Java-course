@@ -21,3 +21,24 @@ on variable size 80000, we will find, that operations of inserting in LinkedList
 
 ### TreeSet vs HashSet
 
+Size of variable is 8000000 elements.
+
+| Type    | Insert    | Find   | Remove |
+|---------|-----------|--------|--------|
+| TreeSet | 2921.96ms | 0.62ms | 0.10ms |
+| HashSet | 911.51ms  | 0.08ms | 0.02ms |
+
+#### HashSet is faster in inserting, finding and removing than TreeSet. 
+
+HashSet difficult of operations is O(1) in the best case. 
+But HashSet difficult of operations is O(n) in the worst case.
+
+TreeSet difficult of operations is O(log n) in all cases.
+
+#### Conclusion (From fastest to slowest)
+
+**Insert**: ArrayList (in big variables cases) < LinkedList < HashSet < TreeSet
+
+**Find**: HashSet (in best cases) < TreeSet <  ArrayList < LinkedList
+
+**Remove**:  HashSet (in best cases) < TreeSet < LinkedList (remove first part of list) < ArrayList
