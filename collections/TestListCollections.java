@@ -2,9 +2,9 @@ import java.util.List;
 import java.util.Random;
 
 public class TestListCollections {
-    private final int[] indexes = {1,2,4,567, }; //10001, 750000, 321321, 453421,
+    private final int[] indexes = {40000,40000,40000,40000,40000,40000,40000 };
     private final int findElement = 99999999;
-    private static int N = 80000;
+    private final int N = 80000;
     private double addElementsDuration;
     private double findElementDuration;
     private double removeElementsDuration;
