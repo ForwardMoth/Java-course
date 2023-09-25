@@ -6,8 +6,8 @@ public class Main {
     public static void main(String[] args) throws ArrayException {
         ArrayList<Integer> arrayList = new ArrayList<>();
         try {
-            for(int i=0;i<11;i++) {
-                if (i == 10)
+            for(int i=0;i<12;i++) {
+                if (arrayList.size() > 10)
                     throw new ArrayException();
                 arrayList.add(i);
             }
