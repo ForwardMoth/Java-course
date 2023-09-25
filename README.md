@@ -3,4 +3,5 @@
 ## My tasks
 ### 1. [Sea battle game](https://github.com/ForwardMoth/Java-course/tree/sea_battle/sea-battle) 
 ### 2. [Collections](https://github.com/ForwardMoth/Java-course/tree/collections/collections)
+### 3. [Exceptions](https://github.com/ForwardMoth/Java-course/tree/exceptions/exceptions)
 
