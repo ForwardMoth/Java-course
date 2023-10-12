@@ -6,5 +6,5 @@
 ### 3. [Exceptions](https://github.com/ForwardMoth/Java-course/tree/exceptions/exceptions)
 ### 4. [Serialization](https://github.com/ForwardMoth/Java-course/tree/serialization/serialization/src)
 ### 5. [IO](https://github.com/ForwardMoth/Java-course/tree/IO/IO/src)
-### 6. Work in progress
+### 6. [Java8](https://github.com/ForwardMoth/Java-course/tree/Java8/Java8/src)
 ### 7. [MultiThread](https://github.com/ForwardMoth/Java-course/tree/multithread/multithread/src)
