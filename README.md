@@ -8,4 +8,4 @@
 ### 5. [IO](https://github.com/ForwardMoth/Java-course/tree/IO/IO/src)
 ### 6. [Java8](https://github.com/ForwardMoth/Java-course/tree/Java8/Java8/src)
 ### 7. [MultiThread](https://github.com/ForwardMoth/Java-course/tree/multithread/multithread/src)
-### 8. [SQL](https://github.com/ForwardMoth/Java-course/tree/SQL)
+### 8. [SQL](https://github.com/ForwardMoth/Java-course/tree/SQL/SQL)
