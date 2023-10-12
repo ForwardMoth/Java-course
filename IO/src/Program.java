@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class Program {
     private static String command;
-    private static Set<String> validCommands = new HashSet<String>() {{
+    private static final Set<String> validCommands = new HashSet<String>() {{
         add("-create");
         add("-write");
         add("-delete");
@@ -15,46 +15,46 @@ public class Program {
     }};
     private static String[] commandParams;
 
-    private static String fileName;
-    private static String action;
-    private static String text;
-
-
     public static void main(String[] args) throws IOException {
         Scanner scanner = new Scanner(System.in);
         command = scanner.nextLine();
         if (isValidCommand(command)){
-            FileManager fileManager = new FileManager(fileName, action, text);
+            FileManager fileManager = new FileManager(commandParams[0], commandParams[1], formText());
             fileManager.run();
-            System.out.println("good");
         } else {
             System.out.println("The command is invalid!");
         }
     }
 
+    private static String formText(){
+        if (isWrite()) {
+            StringBuilder sb = new StringBuilder();
+            for(int i=2;i<commandParams.length;i++) {
+                sb.append(commandParams[i]);
+                if (i != commandParams.length - 1) {
+                    sb.append(" ");
+                }
+            }
+            return sb.toString();
+        }
+        return "";
+    }
+
     private static boolean isValidCommand(String command) {
         commandParams = command.split(" ");
-        if (commandParams.length > 1 & commandParams.length < 4)
-            fileName = commandParams[0];
-            action = commandParams[1];
-            if (isCommand())
-                return isValidLengthCommand();
-        return false;
+        return commandParams.length > 1 & isCommand() & isValidLengthCommand();
     }
 
     private static boolean isValidLengthCommand() {
-        if (action.equals("write"))
-            if (commandParams.length == 3) {
-                text = commandParams[2];
-                return true;
-            }
-        return  commandParams.length == 2;
+        return isWrite() ? commandParams.length > 2 : commandParams.length == 2;
+    }
+
+    private static boolean isWrite(){
+        return commandParams[1].equals("-write");
     }
 
     private static boolean isCommand() {
-        return validCommands.contains(action);
+        return validCommands.contains(commandParams[1]);
     }
 }
 
-
-// create file:  /home/artem/Projects/Java/Java-course/IO/test.txt -create
