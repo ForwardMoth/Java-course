@@ -21,6 +21,10 @@ public class DbConnection {
         return this.connection.prepareStatement(sql);
     }
 
+    public Statement getStatement() {
+        return statement;
+    }
+
     private void setConnection(){
         try {
             Class.forName("org.postgresql.Driver");
