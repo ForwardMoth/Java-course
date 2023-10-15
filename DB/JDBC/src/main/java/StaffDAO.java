@@ -1,7 +1,5 @@
-import java.security.Permission;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class StaffDAO {
     private final static String tableName = "staff";

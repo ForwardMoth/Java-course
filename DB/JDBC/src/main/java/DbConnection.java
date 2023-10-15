@@ -42,10 +42,6 @@ public class DbConnection {
         this.statement.executeUpdate(sqlQueryCreationStaff);
     }
 
-    public Statement getStatement() {
-        return this.statement;
-    }
-
     protected void close() throws SQLException {
         this.connection.close();
     }
