@@ -10,3 +10,4 @@
 ### 7. [MultiThread](https://github.com/ForwardMoth/Java-course/tree/multithread/multithread/src)
 ### 8. [SQL](https://github.com/ForwardMoth/Java-course/tree/SQL/SQL)
 ### 9. [JDBC](https://github.com/ForwardMoth/Java-course/tree/DB/DB/JDBC)
+### 10. [Hibernate](https://github.com/ForwardMoth/Java-course/tree/DB/DB/Hibernate)
